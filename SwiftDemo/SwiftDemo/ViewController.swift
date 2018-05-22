@@ -31,19 +31,24 @@ class ViewController: UIViewController {
         
         self.view.addSubview(imageV)
         
-        let url1 = URL.init(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521722498988&di=40acbcccbe456700785ea608ac1f7279&imgtype=0&src=http%3A%2F%2Fi2.sanwen.net%2Fdoc%2F1609%2F831-160Z20P342-50.jpg")
-        let request = URLRequest.init(url: url1!)
-        let downloadSessionTask = URLSession.shared.downloadTask(with: request) { [weak self](url, response, error) -> Void in
-            if url?.path != nil{
-                print("图片地址:\(String(describing: url?.path))")
-                let data1 = NSData.init(contentsOfFile: url!.path)
-                let image = UIImage.init(data: data1! as Data)
-                DispatchQueue.main.async {
-                    self?.imageV.image = image
-                }
-            }
-        }
-        downloadSessionTask.resume()
+        let downloadTask = NetworkDownloadTask.init()
+        downloadTask.urlStr = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521722498988&di=40acbcccbe456700785ea608ac1f7279&imgtype=0&src=http%3A%2F%2Fi2.sanwen.net%2Fdoc%2F1609%2F831-160Z20P342-50.jpg"
+        downloadTask.delegate = self
+        downloadTask.startRequest()
+        
+//        let url1 = URL.init(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521722498988&di=40acbcccbe456700785ea608ac1f7279&imgtype=0&src=http%3A%2F%2Fi2.sanwen.net%2Fdoc%2F1609%2F831-160Z20P342-50.jpg")
+//        let request = URLRequest.init(url: url1!)
+//        let downloadSessionTask = URLSession.shared.downloadTask(with: request) { [weak self](url, response, error) -> Void in
+//            if url?.path != nil{
+//                print("图片地址:\(String(describing: url?.path))")
+//                let data1 = NSData.init(contentsOfFile: url!.path)
+//                let image = UIImage.init(data: data1! as Data)
+//                DispatchQueue.main.async {
+//                    self?.imageV.image = image
+//                }
+//            }
+//        }
+//        downloadSessionTask.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +56,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
+extension ViewController:NetWorkDelegate{
+    func downloadImage(image: UIImage) {
+        self.imageV.image = image
+    }
+    
+}

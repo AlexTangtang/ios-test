@@ -14,6 +14,7 @@
 		B8218B7020B3C2EF00E8694D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8218B6E20B3C2EF00E8694D /* LaunchScreen.storyboard */; };
 		B8218B7B20B3C2EF00E8694D /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8218B7A20B3C2EF00E8694D /* SwiftDemoTests.swift */; };
 		B8218B8620B3C2EF00E8694D /* SwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8218B8520B3C2EF00E8694D /* SwiftDemoUITests.swift */; };
+		B8218B9420B406E000E8694D /* NetworkDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8218B9320B406E000E8694D /* NetworkDownloadTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B8218B8120B3C2EF00E8694D /* SwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8218B8520B3C2EF00E8694D /* SwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoUITests.swift; sourceTree = "<group>"; };
 		B8218B8720B3C2EF00E8694D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8218B9320B406E000E8694D /* NetworkDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloadTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		B8218B6420B3C2EE00E8694D /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B8218B9320B406E000E8694D /* NetworkDownloadTask.swift */,
 				B8218B6520B3C2EE00E8694D /* AppDelegate.swift */,
 				B8218B6720B3C2EE00E8694D /* ViewController.swift */,
 				B8218B6920B3C2EE00E8694D /* Main.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8218B9420B406E000E8694D /* NetworkDownloadTask.swift in Sources */,
 				B8218B6820B3C2EE00E8694D /* ViewController.swift in Sources */,
 				B8218B6620B3C2EE00E8694D /* AppDelegate.swift in Sources */,
 			);
